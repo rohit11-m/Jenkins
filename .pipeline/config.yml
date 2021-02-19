@@ -26,3 +26,29 @@ steps:
       - 'CCFenner'
       - 'OliverNocon'
       - 'nevskrem'
+general:
+  cfApiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+  cfOrg: 'your-cf-org'
+  cfSpace: 'yourSpace'
+  cfCredentialsId: 'cfAuthentification'
+  cfServiceInstance: 'abapEnvironmentPipeline'
+  cfServiceKeyName: 'jenkins_sap_com_0510'
+stages:
+  Prepare System:
+    cfService: 'abap'
+    cfServicePlan: 'standard'
+    abapSystemAdminEmail: 'user@example.com'
+    abapSystemDescription: 'ABAP Environment Q System'
+    abapSystemIsDevelopmentAllowed: false
+    abapSystemID: 'H02'
+    abapSystemSizeOfPersistence: 4
+    abapSystemSizeOfRuntime: 1
+    cfServiceKeyConfig: 'sap_com_0510.json'
+  Clone Repositories:
+    strategy: 'Clone'
+    repositories: 'repositories.yml'
+  ATC:
+    atcConfig: 'atcConfig.yml'
+steps:
+  cloudFoundryDeleteService:
+    cfDeleteServiceKeys: true
