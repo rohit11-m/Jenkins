@@ -27,7 +27,7 @@ steps:
       - 'OliverNocon'
       - 'nevskrem'
 general:
-  cfApiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+  cfApiEndpoint: 'http://prs74965.nonprod.portsmouth.jlrint.com:8000/sap/bc/adt'
   cfOrg: 'your-cf-org'
   cfSpace: 'yourSpace'
   cfCredentialsId: 'cfAuthentification'
@@ -38,9 +38,9 @@ stages:
     cfService: 'abap'
     cfServicePlan: 'standard'
     abapSystemAdminEmail: 'user@example.com'
-    abapSystemDescription: 'ABAP Environment Q System'
+    abapSystemDescription: 'ABAP Environment Sandbox System'
     abapSystemIsDevelopmentAllowed: false
-    abapSystemID: 'H02'
+    abapSystemID: 'TES'
     abapSystemSizeOfPersistence: 4
     abapSystemSizeOfRuntime: 1
     cfServiceKeyConfig: 'sap_com_0510.json'
